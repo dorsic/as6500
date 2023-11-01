@@ -119,8 +119,8 @@ The data files are available for download from the [datafiles](datafiles "datafi
 - Clean, stable clock sources have to be used. Using LeoBodnar as a reference clock or HP33120A for generating start pulses adds additional jitter, but on the other hand practically no outliers were observed.
 
 ## Open Questions
-- The TDEV plot for TDC7200 - Why do the 10-sigma filtered traces (red and teal) have opposite direction than the non-filtered (golden yellow)?
-- Why aren't the AS6500 plots straight? Is it due to temperature dependency and vibration shocks?
+- The TDEV plot for TDC7200 - Why do the 10-sigma filtered traces (red and teal) have different slope than the non-filtered (golden yellow)?
+- Why aren't the AS6500 plots straight? It is due to temperature dependency and vibration shocks.
 
 
 
