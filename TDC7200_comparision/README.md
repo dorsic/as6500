@@ -37,6 +37,8 @@ The specification limits for AS6500 are
 #### Standard resolution
 Measurement with standard resolution (HI-RESOLUTION OFF):
 
+(The X-axis 'index [0.01 s]' is the aquired point index and can be converted to time = index/100 seconds in the measurement.)
+
 ![AS6500 STD 100 Hz](images/AS_STD_100hz.png)
 ![AS6500 STD 100 Hz SF](images/AS_STD_100hz_sf.png)
 
