@@ -3,7 +3,7 @@
 Following charts are the measurement of fixed time interval with [ScioSense AS6500](https://www.sciosense.com/products/time-to-digital-converters/as6500-time-to-digital-converter/ "ScioSense AS6500") chip and the [TDC7200 from Texas Instruments](https://www.ti.com/product/TDC7200 "TI TDC7200").
 Resolution and standard deviation (RMS error) was of interrest by the measurements.
 
-### Measurement Setup
+## Measurement Setup
 
 The measurement was realised by generating 100 Hz or, in some cases, 10 Hz pulses derived from the 10 MHz reference clock.
 For the division, an RP2040 chip was used.
@@ -21,32 +21,36 @@ The measurements were conducted with different settings for the resolution of th
 
 <img alt="Mikroe-5570" src="images/Mikroe-5570.jpg" width=500 />
 
-### Data Processing
+## Data Processing
 Indications from the chips where logged to datafiles and then processed with Python and TimeLab.
 10-sigma filter for outliers was applied for datafiles with `_sf` suffix.
 
-### SR620
+## SR620
 The SR620 measurement of the cable loop delay line was 16.859 +- 0.007 ns.
 
-### AS6500
+## AS6500
 The specification limits for AS6500 are
 - single shot RMS resolution - 20 ps or 10 ps with high (4X) resolution
 - offset error - 100 ps or 200 ps with high (4X) resolution
 - 0 - 16 s time interval measurement (0-1.6 s with 10 MHz ref. clock and 1ps resolution)
 
+#### Standard resolution
 Measurement with standard resolution (HI-RESOLUTION OFF):
 
 ![AS6500 STD 100 Hz](images/AS_STD_100hz.png)
 ![AS6500 STD 100 Hz SF](images/AS_STD_100hz_sf.png)
 
+#### HI-RESOLUTION 2X
 Measurement with 2x hi-resolution setting:
 ![AS6500 2X 100 Hz](images/AS_2X_100hz.png)
 ![AS6500 2X 100 Hz SF](images/AS_2X_100hz_sf.png)
 
+#### HI-RESOLUTION 4X
 Measurement with 4x hi-resolution setting:
 ![AS6500 4X 100 Hz](images/AS_4X_100hz.png)
 ![AS6500 4X 100 Hz SF](images/AS_4X_100hz_sf.png)
 
+#### Other
 For completeness some additional measurements:
 
 - a longer run at 10 samples per seconds with 4X hi-resolution setting:
@@ -62,31 +66,28 @@ For completeness some additional measurements:
 ![AS6500 4X 100 Hz histogram with LeoBodnar as ref clock](images/AS_LBH_4X_100hz_hist.png)
 
 
-### TDC7200
+## TDC7200
 The specification limits for TI TDC7200 are
 - resolution 55 ps
 - RMS error 35 ps
 - 12 - 500 ns (mode 1) time interval measurement 
 - 250ns - 8 ms (mode 2) time interval measurement
 
+#### 100 samples per second
 Measurement pace of 100 samples per second:
 
 ![TDC7200 100 Hz](images/TDC_cal10_100hz.png)
 ![TDC7200 100 Hz sigma filtered](images/TDC_cal10_100hz_sf.png)
 ![TDC7200 100 Hz sigma filtered](images/TDC_cal10_100hz_sf_hist.png)
 
-With slower measurement pace of 10 samples per second:
+#### 10 samples per second
+
+Slower measurement pace of 10 samples per second:
 ![TDC7200 10 Hz](images/TDC_cal10_10hz.png)
 ![TDC7200 10 Hz sigma filtered](images/TDC_cal10_10hz_sf.png)
 ![TDC7200 10 Hz sigma filtered](images/TDC_cal10_10hz_sf_hist.png)
 
-![TDC7200 ADEV](images/TDC_ADEV.png)
-![TDC7200 TDEV](images/TDC_TDEV.png)
-![TDC7200 TDEV](images/TDC_HDEV.png)
-![TDC7200 TDEV](images/TDC_MDEV.png)
-![TDC7200 TDEV](images/TDC_MTIE.png)
-
-## Allan deviations
+## Allan Deviation
 
 #### AS6500
 ![AS6500 ADEV](images/AS_ADEV.png)
