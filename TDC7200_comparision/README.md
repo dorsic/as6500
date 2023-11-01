@@ -42,6 +42,8 @@ Measurement with standard resolution (HI-RESOLUTION OFF):
 
 #### HI-RESOLUTION 2X
 Measurement with 2x hi-resolution setting:
+
+(Sorry for the wrong image title mentioning resolution 4X instead of 2X.)
 ![AS6500 2X 100 Hz](images/AS_2X_100hz.png)
 ![AS6500 2X 100 Hz SF](images/AS_2X_100hz_sf.png)
 
