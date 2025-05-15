@@ -14,6 +14,14 @@ GPIO_RIR = 19	  # clock index reset
 DEBUG = None
 
 def main():
+    # there is a index reset issued before each measurement in the while True cycle
+    # if common_fifo_read==1 and blockwise_fifo_read == 0, 
+    #     old stale clock index value bitwise ORed with 2**24
+    #     could be read for max. all but one channel. This value need to be treaded then as signed.
+    #     So for measuring time interval between START at Ch1 and STOP at Ch2 
+    #     the clock index value for Ch1 needs to be treated as signed (negative) if Ch1_clockIndex (unsigned) > Ch2_clockIndex (unsigned) value
+    #       df.loc[df.CLKIDX_1 > df.CLKIDX_2, 'CLKIDX_1'] = df.loc[df.CLKIDX_1 > df.CLKIDX_2].CLKIDX_1.apply(lambda x: AS6500.add_24bit_signed(x, 2**24))
+    
     tdc = AS6500(GPIO_CS, GPIO_INT, GPIO_RIR)
     tdc.refclk = tdc.REF_CLK_EXT
     tdc.reffreq_hz = 10_000_000
