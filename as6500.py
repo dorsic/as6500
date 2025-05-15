@@ -340,6 +340,12 @@ class AS6500:
 
     def tr(self, measure, channel):
         return measure[channel][1]/self._ref_clock_divisions * self.refclk_period_ns
+        
+    def add_24bit_signed(a, b):
+        result = (a + b) & 0xFFFFFF  # keep only lowest 24 bits
+        if result & 0x800000:        # check if MSB (bit 23) is 1 → negative
+            return result - 0x1000000  # apply two's complement
+        return result
     
     def close(self):
         self.spi.close()
